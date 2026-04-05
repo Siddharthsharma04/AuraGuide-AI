@@ -77,7 +77,7 @@ const CameraStream: React.FC<CameraStreamProps> = ({ isActive, onAlert }) => {
 
       // Proactive Spatial Logic
       const relevantObjects = ['person', 'car', 'bus', 'truck', 'stop sign', 'bicycle'];
-      if (relevantObjects.includes(prediction.class)) {
+      if (relevantObjects.includes(prediction.class) && canvasRef.current) {
         const midPoint = x + width / 2;
         const relativePosition = midPoint / canvasRef.current.width;
         
